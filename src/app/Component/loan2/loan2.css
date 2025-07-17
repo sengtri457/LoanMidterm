@@ -1,0 +1,168 @@
+.input-section {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 150px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.results-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 
+.fw-bold {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background: #f8f9fa;
+    font-weight: bold;
+    color: #2c5282;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bgsky {
+    background-color: #e3f2fd;
+}
+
+.bg-primary {
+    background-color: #2196f3;
+    color: white;
+}
+
+.highlight-total {
+    background-color: #ffeb3b;
+    font-weight: bold;
+}
+
+.highlight-amount {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+}
+
+tbody tr:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .input-group {
+        display: block;
+        margin-right: 0;
+    }
+
+    input {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .table {
+        font-size: 12px;
+    }
+
+    .table th,
+    .table td {
+        padding: 8px 4px;
+    }
+} */
+
+table {
+    margin-top: 1.5rem;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #c8c8c8;
+    padding: 0.3rem 0.5rem;
+    text-align: center;
+}
+
+.tableheader th {
+    color: dodgerblue;
+}
+
+.text-green {
+    background-color: gray;
+    color: white;
+}
+
+.table {
+    background-color: rgb(0, 0, 0);
+    font-family: "Dangrek", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.table>:not(caption)>*>* {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+}
+
+.tableheader td {
+    font-family: "Dangrek", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: dodgerblue;
+}
+
+h2,
+button,
+input {
+    font-family: "Dangrek", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.text-green {
+    background-color: gray;
+    color: white;
+}
+
+.model-wrapper {
+    background-color: rgba(126, 126, 126, 0.5);
+    backdrop-filter: blur(5px);
+    color: white;
+}

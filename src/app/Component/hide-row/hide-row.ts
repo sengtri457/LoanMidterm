@@ -42,7 +42,7 @@ export class HideRow implements OnInit {
         'Loan3',
         'DescriptionLoan',
         'DescriptionLoan2',
-        'Class',
+        'DescriptionLoan3',
       ],
       km: [
         'វគ្គសិក្សា',
@@ -137,11 +137,11 @@ export class HideRow implements OnInit {
       Loan3: '/Loan3',
       DescriptionLoan: '/DescriptionLoan',
       DescriptionLoan2: '/DescriptionLoan2',
-      Class: '/Class',
+      DescriptionLoan3: '/DescriptionLoan3',
       វគ្គសិក្សា: '/Loan',
       កាលវិភាគ: '/Loan2',
       វត្តមាន: '/Loan3',
-      ពិន្ទុ: '/DescriptionLoan',
+      ពិន្ទុ: '/DescriptionLoan3',
       គ្រូបង្រៀន: '/DescriptionLoan2',
       ថ្នាក់: '/Class',
     };

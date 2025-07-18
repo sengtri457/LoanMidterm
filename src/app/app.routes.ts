@@ -7,6 +7,7 @@ import { Loan2 } from './Component/loan2/loan2';
 import { LoanThreeMonth } from './Component/loan-three-month/loan-three-month';
 import { DescriptionLoan } from './Component/description-loan/description-loan';
 import { DescriptionLoan2 } from './Component/description-loan2/description-loan2';
+import { DescripionLoan3 } from './Component/descripion-loan3/descripion-loan3';
 
 export const routes: Routes = [
   {
@@ -45,6 +46,10 @@ export const routes: Routes = [
   {
     path: 'DescriptionLoan2',
     component: DescriptionLoan2,
+  },
+  {
+    path: 'DescriptionLoan3',
+    component: DescripionLoan3,
   },
   {
     path: '**',

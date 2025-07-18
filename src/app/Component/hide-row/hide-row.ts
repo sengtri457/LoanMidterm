@@ -36,7 +36,14 @@ export class HideRow implements OnInit {
   currentLanguage: 'en' | 'km' = 'en';
   getcolor(): color[] {
     const textMap = {
-      en: ['Course', 'Schedule', 'Attendent', 'Score', 'Teacher', 'Class'],
+      en: [
+        'Loan',
+        'Loan2',
+        'Loan3',
+        'DescriptionLoan',
+        'DescriptionLoan2',
+        'Class',
+      ],
       km: [
         'វគ្គសិក្សា',
         'កាលវិភាគ',
@@ -125,17 +132,17 @@ export class HideRow implements OnInit {
   }
   NavigatePage(text: string) {
     const routeMap: Record<string, string> = {
-      Course: '/Course',
-      Schedule: '/Scedule',
-      Attendent: '/Attendent',
-      Score: '/Sore',
-      Teacher: '/Teacher',
+      Loan: '/Loan',
+      Loan2: '/Loan2',
+      Loan3: '/Loan3',
+      DescriptionLoan: '/DescriptionLoan',
+      DescriptionLoan2: '/DescriptionLoan2',
       Class: '/Class',
-      វគ្គសិក្សា: '/Course',
-      កាលវិភាគ: '/Scedule',
-      វត្តមាន: '/Attendent',
-      ពិន្ទុ: '/Sore',
-      គ្រូបង្រៀន: '/Teacher',
+      វគ្គសិក្សា: '/Loan',
+      កាលវិភាគ: '/Loan2',
+      វត្តមាន: '/Loan3',
+      ពិន្ទុ: '/DescriptionLoan',
+      គ្រូបង្រៀន: '/DescriptionLoan2',
       ថ្នាក់: '/Class',
     };
 

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Calculator Information</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .hero {
+            background-color: #0d6efd;
+            color: white;
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            color: #0d6efd;
+            font-weight: 600;
+        }
+
+        footer {
+            background-color: #212529;
+            color: white;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">How Our Loan System Works</h1>
+            <p class="lead">Transparent, Simple, and Easy to Understand</p>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Loan Breakdown</h2>
+            <div class="row text-center g-4">
+                <div class="col-md-4">
+                    <div class="card p-4 h-100 shadow-sm">
+                        <h5 class="card-title">Loan Amount</h5>
+                        <p class="card-text">This is the total amount you want to borrow. The system allows any positive
+                            number.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 h-100 shadow-sm">
+                        <h5 class="card-title">Interest Rate</h5>
+                        <p class="card-text">A fixed monthly percentage is added to your loan. For example, 2% monthly
+                            interest.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 h-100 shadow-sm">
+                        <h5 class="card-title">Duration</h5>
+                        <p class="card-text">You can choose how many months to pay it back. The system splits payments
+                            monthly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Example Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Example Calculation</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="alert alert-info">
+                        <p><strong>Loan:</strong> $2,000</p>
+                        <p><strong>Interest Rate:</strong> 2% per month</p>
+                        <p><strong>Duration:</strong> 10 months</p>
+                        <hr />
+                        <p><strong>Monthly Principal:</strong> $200</p>
+                        <p><strong>Monthly Interest:</strong> $40</p>
+                        <p><strong>Monthly Payment:</strong> $240</p>
+                        <p><strong>Total Interest Paid:</strong> $400</p>
+                        <p><strong>Grand Total:</strong> $2,400</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Why Use This System?</h2>
+            <div class="row text-center g-4">
+                <div class="col-md-4">
+                    <div class="card p-4 h-100 border-success">
+                        <h5 class="card-title text-success">Clear Schedule</h5>
+                        <p class="card-text">Automatically generates monthly payment dates, starting from a fixed base
+                            date.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 h-100 border-warning">
+                        <h5 class="card-title text-warning">No Surprises</h5>
+                        <p class="card-text">The total cost, interest, and payment amounts are shown before you commit.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 h-100 border-primary">
+                        <h5 class="card-title text-primary">Instant Feedback</h5>
+                        <p class="card-text">Get real-time alerts if your input is invalid or below required limits.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">© 2025 LoanInfo. Built to help you plan better.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

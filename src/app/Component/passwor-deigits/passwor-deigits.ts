@@ -22,7 +22,7 @@ export class PassworDeigits {
   Cancel = signal('ប៉ោះបង់');
   detected = signal('');
   Admin = signal('User');
-  DetectedAwait = true;
+  DetectedAwait = signal(true);
   showError = false;
   username: string = 'Admin';
   password: string = '';
@@ -49,22 +49,23 @@ export class PassworDeigits {
   triggerError() {
     setTimeout(() => {
       this.showError = true;
-    }, 10);
+    }, 100);
   }
   VerifyCode(): void {
     let EnterCode = this.code.join('');
     this.password = EnterCode;
     if (this.password === '999999') {
       this.Admin.set('Admin');
-      this.DetectedAwait = false;
+      this.DetectedAwait.set(false);
       this.AwaitLoading();
     } else {
       this.detected.set('សូមបញ្ចូលលេខPINអោយបានត្រឹមត្រូវ');
       this.triggerError();
       setTimeout(() => {
         this.Clear();
-      }, 200);
+      }, 100);
     }
+    console.log(this.password);
   }
 
   login() {
@@ -89,10 +90,11 @@ export class PassworDeigits {
     console.log(this.currentIndex);
   }
   CheckClass() {
-    return this.DetectedAwait ? 'loading' : 'active';
+    return this.DetectedAwait() ? 'loading' : 'active';
   }
   AwaitLoading() {
     setTimeout(() => {
+      this.DetectedAwait.set(false);
       this.CheckClass();
       this.login();
     }, 2000);

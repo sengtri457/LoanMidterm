@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
 interface LoanEntry {
   no: number;
@@ -11,7 +12,7 @@ interface LoanEntry {
 }
 @Component({
   selector: 'app-loan',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './loan.html',
   styleUrl: './loan.css',
 })
@@ -77,7 +78,6 @@ export class Loan implements OnInit {
       });
     }
   }
-
   generatePaymentDates(): void {
     this.paymentDates = [];
     for (let i = 0; i < this.duration; i++) {

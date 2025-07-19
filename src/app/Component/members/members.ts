@@ -72,7 +72,7 @@ export class Members {
         img: '/pic/PortfolioPic.jpg',
       },
       {
-        name: 'Ou Seainh',
+        name: 'Chem SeaFong',
         title: 'Collections Specialist',
         emId: 'CS004',
         department: 'Collections',

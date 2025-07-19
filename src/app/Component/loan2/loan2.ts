@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-loan2',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, RouterLink],
   templateUrl: './loan2.html',
   styleUrl: './loan2.css',
 })
@@ -24,6 +25,7 @@ export class Loan2 implements OnInit {
     this.payments = [];
     const inputPrice = parseFloat(this.priceInput);
     const inputInterest = parseFloat(this.interestInput);
+    this.duration = this.selectedDuration;
     this.principal = inputPrice;
     this.interestRate = inputInterest;
     const monthlyPrincipal = this.principal / this.duration;

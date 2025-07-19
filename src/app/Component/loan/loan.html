@@ -41,8 +41,12 @@
                         </select>
                     </label>
                 </div>
+
                 <button (click)="calculateLoan()" class="btn btn-calculate"><i
-                        class="fas fa-chart-line me-2"></i>ផ្លាស់ប្តូរកម្ចៃប្រាក់</button>
+                        class="fa-solid fa-money-check-dollar me-2"></i>Calculating payments</button>
+                <button class="btn btn-calculate mt-3" routerLink="/dashboard"><i
+                        class="fas fa-chart-line me-2"></i>Continue
+                    DashBoard</button>
 
             </div>
         </div>
@@ -58,7 +62,7 @@
                 <div class="summary-card interest">
                     <div class="icon"><i class="fas fa-percentage"></i></div>
                     <h4>Total Interest</h4>
-                    <div class="amount" id="totalInterest">${{interestRate}}</div>
+                    <div class="amount" id="totalInterest">%{{interestRate}}</div>
                 </div>
                 <div class="summary-card interest">
                     <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
@@ -87,7 +91,7 @@
         </div>
     </div>
     @if (loanList.length >0) {
-    <div class="payment-schedule animate__animated animate__fadeInUp">
+    <div class="payment-schedule" data-aos="fade-up">
         <h3><i class="fas fa-table me-2"></i>Payment Schedule</h3>
         <div class="loading-spinner" id="loadingSpinner">
             <i class="fas fa-spinner fa-spin fa-2x"></i>

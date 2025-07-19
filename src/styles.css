@@ -47,6 +47,14 @@ input {
     font-style: normal;
 }
 
+.animate__animated.animate__backInUp {
+    --animate-duration: 1s;
+}
+
+.animate__animated.animate__backInDown {
+    --animate-duration: 1s;
+}
+
 body {
     /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
     min-height: 100vh;

@@ -5,15 +5,14 @@
                 <h3 (click)="clickNav()"><i [ngClass]="hideNav().iconClass"></i></h3>
             </div>
             <div class="wrapper-right d-flex justify-content-between align-items-center gap-4">
-                <h3>
-                    <i class="fa-solid fa-clock">
-                    </i>
+                <h3 data-bs-toggle="modal" data-bs-target="#loanModal">
+                    <i class="fa-solid fa-address-card"></i>
                 </h3>
                 <h3 (click)="KhmerLanguaue()">
-                    <i class="fa-brands fa-rocketchat"></i>
+                    <i class="fa-solid fa-globe"></i>
                 </h3>
                 <h3 (click)="toggleTheme()">
-                    <i class="fa-solid fa-gear"></i>
+                    <i [ngClass]="iconTheme()"></i>
                 </h3>
             </div>
         </div>
@@ -21,16 +20,16 @@
     <div class="container-xxl container-fluid p-4 position-relative overflow-hidden">
         <div class="wrappernavbar" [ngClass]="[hideNav().navbarClass, theme()]">
             <ul class="list-group flex-lg-row flex-wrap gap-4 ">
-                <li class="nav-link"><a href="" routerLink="/home">Home</a></li>
-                <li class="nav-link"><a href="" routerLink="/Course">Course</a></li>
-                <li class="nav-link"><a href="" routerLink="/Scedule">Schedule</a></li>
-                <li class="nav-link"><a href="" routerLink="/Attendent">Attendent</a></li>
-                <li class="nav-link"><a href="" routerLink="/Attendent">Score</a></li>
-                <li class="nav-link"><a href="" routerLink="/Teacher">Teacher</a></li>
-                <li class="nav-link"><a href="" routerLink="/Class">Class</a></li>
+                <li class="nav-link"><a href="" routerLink="/dashborad">Home</a></li>
+                <li class="nav-link"><a href="" routerLink="/Loan">Loan1</a></li>
+                <li class="nav-link"><a href="" routerLink="/Loan2">Loan2</a></li>
+                <li class="nav-link"><a href="" routerLink="/Loan3">Loan3</a></li>
+                <li class="nav-link"><a href="" routerLink="/DescriptionLoan">DSC1</a></li>
+                <li class="nav-link"><a href="" routerLink="/DescriptionLoan2">DSC2</a></li>
+                <li class="nav-link"><a href="" routerLink="/DescriptionLoan3">DSC3</a></li>
             </ul>
         </div>
-        <div class="row d-flex align-items-center">
+        <div class="row d-flex align-items-center animate__animated animate__backInUp">
             <div class="col-lg-8 col-6">
                 <div class="wrapper-profiles d-flex align-items-center gap-3">
                     <article class="profiles">
@@ -51,12 +50,12 @@
                     </h3>
                 </div>
             </div>
+            <div class="row mt-2   ">
+                <h3>{{AdminChange()}}</h3>
+                <p>{{idChange()}}</p>
+            </div>
         </div>
-        <div class="row mt-2">
-            <h3>{{AdminChange()}}</h3>
-            <p>{{idChange()}}</p>
-        </div>
-        <main class="wrapper-menu">
+        <main class="wrapper-menu animate__animated animate__backInDown">
             <div class="row mt-4">
                 @for (color of getcolor(); track $index) {
                 <div class=" col-4 mb-3">
@@ -78,5 +77,151 @@
                 }
             </div>
         </main>
+    </div>
+</div>
+<div class="modal  animate__animated animate__zoomInDown" id="loanModal" tabindex="-1" aria-labelledby="loanModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg ">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="loanModalLabel">
+                        <i class="fas fa-handshake me-2"></i>Trusted Lending Partner
+                    </h5>
+                    <p class="trust-subtitle">Transparent, secure, and customer-focused financial solutions</p>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <!-- Trust Building Section -->
+                <div class="trust-section">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="trust-item">
+                                <div class="trust-icon security">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <div class="trust-content">
+                                    <h6>Bank-Level Security</h6>
+                                    <small>256-bit SSL encryption protects your personal and financial data</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="trust-item">
+                                <div class="trust-icon transparent">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="trust-content">
+                                    <h6>Full Transparency</h6>
+                                    <small>No hidden fees, clear terms, and honest communication always</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="trust-item">
+                                <div class="trust-icon regulated">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="trust-content">
+                                    <h6>Fully Licensed</h6>
+                                    <small>Licensed lender in all 50 states, FDIC member institution</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="trust-item">
+                                <div class="trust-icon support">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <div class="trust-content">
+                                    <h6>24/7 Support</h6>
+                                    <small>Real humans available anytime to help with your questions</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loan Basics -->
+                <div class="loan-basics">
+                    <h4 class="basics-title">
+                        <i class="fas fa-info-circle me-2"></i>How Our Personal Loans Work
+                    </h4>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <div class="info-value">$1K - $50K</div>
+                            <div class="info-label">Loan Amounts</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-value">5.99% - 24.99%</div>
+                            <div class="info-label">APR Range</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-value">2 - 7 Years</div>
+                            <div class="info-label">Repayment Terms</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-value">Same Day</div>
+                            <div class="info-label">Funding Speed</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Explanation Box -->
+                <div class="explanation-box">
+                    <h6><i class="fas fa-lightbulb me-2"></i>Why Choose Personal Loans?</h6>
+                    <p>Personal loans offer fixed monthly payments, predictable terms, and often lower interest rates
+                        than credit cards. Use them for debt consolidation, home improvements, medical expenses, or any
+                        major purchase. Unlike credit cards, you'll know exactly when your loan will be paid off.</p>
+                </div>
+
+                <!-- Guarantee Section -->
+                <div class="guarantee-section">
+                    <div class="guarantee-icon">
+                        <i class="fas fa-shield-check"></i>
+                    </div>
+                    <h5 style="color: #065f46; font-weight: 700;">Our Promise to You</h5>
+                    <p style="color: #047857; margin: 0;">✓ No prepayment penalties &nbsp;&nbsp; ✓ Fixed rates, never
+                        variable &nbsp;&nbsp; ✓ No application fees</p>
+                </div>
+
+                <!-- Credentials -->
+                <div class="credentials">
+                    <div class="credential-item">
+                        <i class="fas fa-star"></i>
+                        4.8/5 Rating<br>50K+ Reviews
+                    </div>
+                    <div class="credential-item">
+                        <i class="fas fa-users"></i>
+                        2M+ Customers<br>Since 2010
+                    </div>
+                    <div class="credential-item">
+                        <i class="fas fa-award"></i>
+                        A+ Rating<br>Better Business Bureau
+                    </div>
+                    <div class="credential-item">
+                        <i class="fas fa-dollar-sign"></i>
+                        $5B+ Funded<br>Trusted Partner
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                    <i class="fas fa-times me-1"></i>Maybe Later
+                </button>
+                <!-- <button type="button" class="btn btn-primary">
+                    <i class="fas fa-calculator me-1"></i>Check My Rate
+                </button>
+                <button type="button" class="btn btn-primary">
+                    <i class="fas fa-play-circle me-1"></i>Apply Now
+                </button> -->
+            </div>
+        </div>
     </div>
 </div>

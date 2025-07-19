@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
 import 'animate.css';
+import { RouterLink } from '@angular/router';
 interface LoanPayment {
   no: number;
   principal: number;
@@ -14,7 +15,7 @@ interface LoanPayment {
 
 @Component({
   selector: 'app-loan-three-month',
-  imports: [FormsModule, CurrencyPipe, CommonModule],
+  imports: [FormsModule, CurrencyPipe, CommonModule, RouterLink],
   templateUrl: './loan-three-month.html',
   styleUrl: './loan-three-month.css',
 })

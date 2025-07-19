@@ -2,6 +2,7 @@ import { LoanService } from './../../Service/loan-service';
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { sign } from 'crypto';
 
 import Swal from 'sweetalert2';
 interface color {
@@ -28,9 +29,17 @@ export class HideRow implements OnInit {
   navigatepage = inject(Router);
 
   theme = signal<'wrapper-dash' | 'activeDark'>('wrapper-dash');
+  iconTheme = signal<'fa-solid fa-moon' | 'fa-solid fa-circle-half-stroke'>(
+    'fa-solid fa-moon'
+  );
   toggleTheme() {
     this.theme.update((current) =>
       current == 'wrapper-dash' ? 'activeDark' : 'wrapper-dash'
+    );
+    this.iconTheme.update((crr) =>
+      crr == 'fa-solid fa-moon'
+        ? 'fa-solid fa-circle-half-stroke'
+        : 'fa-solid fa-moon'
     );
   }
   currentLanguage: 'en' | 'km' = 'en';
@@ -45,21 +54,21 @@ export class HideRow implements OnInit {
         'DescriptionLoan3',
       ],
       km: [
-        'វគ្គសិក្សា',
-        'កាលវិភាគ',
-        'វត្តមាន',
-        'ពិន្ទុ',
-        'គ្រូបង្រៀន',
-        'ថ្នាក់',
+        'ប្រាក់កម្ចី',
+        'ប្រាក់កម្ចីថយការប្រាក់',
+        'ប្រាក់កម្ចីថយការប្រាក់បីខែ',
+        'ការពិពណ៌នាប្រាក់កម្ចី',
+        'ការពិពណ៌នាប្រាក់កម្ចីថយការប្រាក់',
+        'ការពិពណ៌នាប្រាក់កម្ចីថយការប្រាក់បីខែ',
       ],
     };
 
     const classMap = [
-      'fa-solid fa-graduation-cap',
-      'fa-solid fa-calendar-days',
-      'fa-solid fa-clipboard-user',
+      'fa-solid fa-money-check-dollar',
+      'fa-solid fa-money-bill-transfer',
+      'fa-solid fa-money-bill-trend-up',
       'fa-solid fa-list-check',
-      'fa-solid fa-person-chalkboard',
+      'fa-solid fa-calendar-days',
       'fa-solid fa-landmark',
     ];
 
@@ -77,7 +86,7 @@ export class HideRow implements OnInit {
       km: ['គណនី', 'ចូលប្រើប្រាស់'],
     };
 
-    const classMap = ['fa-solid fa-user', 'fa-solid fa-user-tie'];
+    const classMap = ['fa-solid fa-people-group', 'fa-solid fa-user-tie'];
 
     return textMap[this.currentLanguage].map((text, index) => ({
       color: ['#1ABC9C', '#2ECC71'][index],
@@ -121,11 +130,13 @@ export class HideRow implements OnInit {
     this.isAc = !this.isAc;
   }
   CongrateData() {
-    return Swal.fire({
-      title: 'welcome: ' + (this.AdminCatch = this.LoanService.getUserName()),
-      icon: 'success',
-      draggable: true,
-    });
+    return setTimeout(() => {
+      Swal.fire({
+        title: 'welcome: ' + (this.AdminCatch = this.LoanService.getUserName()),
+        icon: 'success',
+        draggable: true,
+      });
+    }, 1000);
   }
   Loout() {
     this.navigatepage.navigate(['/aba']);
@@ -140,12 +151,12 @@ export class HideRow implements OnInit {
       DescriptionLoan3: '/DescriptionLoan3',
       Members: '/Members',
       Login: '/aba',
-      វគ្គសិក្សា: '/Loan',
-      កាលវិភាគ: '/Loan2',
-      វត្តមាន: '/Loan3',
-      ពិន្ទុ: '/DescriptionLoan',
-      គ្រូបង្រៀន: '/DescriptionLoan2',
-      ថ្នាក់: '/DescriptionLoan3',
+      ប្រាក់កម្ចី: '/Loan',
+      ប្រាក់កម្ចីថយការប្រាក់: '/Loan2',
+      ប្រាក់កម្ចីថយការប្រាក់បីខែ: '/Loan3',
+      ការពិពណ៌នាប្រាក់កម្ចី: '/DescriptionLoan',
+      ការពិពណ៌នាប្រាក់កម្ចីថយការប្រាក់: '/DescriptionLoan2',
+      ការពិពណ៌នាប្រាក់កម្ចីថយការប្រាក់បីខែ: '/DescriptionLoan3',
     };
 
     const route = routeMap[text];
@@ -159,15 +170,22 @@ export class HideRow implements OnInit {
       });
     }
   }
-
-  // darkMode() {
-  //   return this.isdark ? 'wrapper-dash' : 'activeDark';
-  // }
-  // toggleDarkMode() {
-  //   this.isdark = !this.isdark;
-  // }
   KhmerLanguaue() {
-    this.currentLanguage = this.currentLanguage === 'en' ? 'km' : 'en';
+    if (this.currentLanguage === 'en') {
+      this.currentLanguage = 'km';
+      Swal.fire({
+        title: 'Khmer Language',
+        icon: 'success',
+        draggable: true,
+      });
+    } else {
+      this.currentLanguage = 'en';
+      Swal.fire({
+        title: 'English Language',
+        icon: 'success',
+        draggable: true,
+      });
+    }
   }
   ngOnInit(): void {
     this.CongrateData();

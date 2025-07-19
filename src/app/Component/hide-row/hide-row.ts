@@ -73,7 +73,7 @@ export class HideRow implements OnInit {
   }
   RowColor(): color[] {
     const textMap = {
-      en: ['Account', 'Login'],
+      en: ['Members', 'Login'],
       km: ['គណនី', 'ចូលប្រើប្រាស់'],
     };
 
@@ -138,12 +138,14 @@ export class HideRow implements OnInit {
       DescriptionLoan: '/DescriptionLoan',
       DescriptionLoan2: '/DescriptionLoan2',
       DescriptionLoan3: '/DescriptionLoan3',
+      Members: '/Members',
+      Login: '/aba',
       វគ្គសិក្សា: '/Loan',
       កាលវិភាគ: '/Loan2',
       វត្តមាន: '/Loan3',
-      ពិន្ទុ: '/DescriptionLoan3',
+      ពិន្ទុ: '/DescriptionLoan',
       គ្រូបង្រៀន: '/DescriptionLoan2',
-      ថ្នាក់: '/Class',
+      ថ្នាក់: '/DescriptionLoan3',
     };
 
     const route = routeMap[text];

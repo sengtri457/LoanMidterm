@@ -1,3 +1,4 @@
+import { Members } from './Component/members/members';
 import { Routes } from '@angular/router';
 import { Loan } from './Component/loan/loan';
 import { PassworDeigits } from './Component/passwor-deigits/passwor-deigits';
@@ -50,6 +51,10 @@ export const routes: Routes = [
   {
     path: 'DescriptionLoan3',
     component: DescripionLoan3,
+  },
+  {
+    path: 'Members',
+    component: Members,
   },
   {
     path: '**',

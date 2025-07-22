@@ -54,7 +54,7 @@ export class Members {
         statTitle: 'Loans Processed',
         statNumber2: 98,
         statTitle2: 'Approval Rate',
-        img: '/pic/PortfolioPic.jpg',
+        img: '/pic/phirun.jpg',
       },
       {
         name: 'Em Raksa',
@@ -69,7 +69,7 @@ export class Members {
         statTitle: 'Cases Underwrote',
         statNumber2: 96,
         statTitle2: 'Decision Accuracy',
-        img: '/pic/PortfolioPic.jpg',
+        img: '/pic/raksa.jpg',
       },
       {
         name: 'Chem SeaFong',
@@ -84,7 +84,7 @@ export class Members {
         statTitle: 'Cases Resolved',
         statNumber2: 87,
         statTitle2: 'Recovery Rate',
-        img: '/pic/PortfolioPic.jpg',
+        img: '/pic/fong.jpg',
       },
       {
         name: 'Sombo Tithmony',
@@ -96,10 +96,10 @@ export class Members {
         specialization: 'Documentation',
         specialization2: 'Compliance Check',
         statNumber: 203,
-        statTitle: 'Documents Processed',
+        statTitle: 'Documents',
         statNumber2: 92,
         statTitle2: 'Processing Speed',
-        img: '/pic/PortfolioPic.jpg',
+        img: '/pic/mony.jpg',
       }
     );
     return row;

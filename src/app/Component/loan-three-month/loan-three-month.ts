@@ -105,7 +105,6 @@ export class LoanThreeMonth implements OnInit {
   checkSucessfull() {
     let numericValuePrice = parseFloat(this.catchValueForm);
     numericValuePrice = this.price;
-    console.log(numericValuePrice, this.price);
 
     if (numericValuePrice == this.price) {
       Swal.fire({
@@ -146,11 +145,5 @@ export class LoanThreeMonth implements OnInit {
         },
       });
     }
-    // console.log(this.loanForm, this.loanParams);
-    // if (this.loanForm.price !== 0) {
-
-    // } else {
-    //   alert('error');
-    // }
   }
 }

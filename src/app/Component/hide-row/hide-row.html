@@ -42,10 +42,10 @@
             </div>
             <div class="col-lg-4 col-6">
                 <div class="wrapper-setting d-flex align-items-lg-center align-items-start gap-3 justify-content-end">
-                    <h3>
+                    <h3 data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa-solid fa-qrcode"></i>
                     </h3>
-                    <h3>
+                    <h3 data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                         <i class="fa-solid fa-gear"></i>
                     </h3>
                 </div>
@@ -80,24 +80,25 @@
     </div>
     <div class="menu-bar row m-auto text-center position-fixed w-100  pt-3 pb-0 bottom-0" [ngClass]="theme()">
         <div class="col">
-            <h3 data-bs-toggle="modal" data-bs-target="#loanModal" class="actives">
+            <h3 routerLink="/dashboard" [ngClass]="{'actives': selectedBtn === 'home'}" (click)="setBtn('home')">
                 <i class="fa-solid fa-house"></i>
             </h3>
         </div>
         <div class="col">
-            <h3 (click)="KhmerLanguaue()">
+            <h3 (click)="[KhmerLanguaue(),setBtn('globe')]" [ngClass]="{'actives': selectedBtn === 'globe'}">
                 <i class="fa-solid fa-globe"></i>
             </h3>
 
         </div>
         <div class="col">
 
-            <h3 (click)="toggleTheme()">
+            <h3 (click)="[toggleTheme(),setBtn('moon')]" [ngClass]="{'actives': selectedBtn === 'moon'}">
                 <i [ngClass]="iconTheme()"></i>
             </h3>
         </div>
         <div class="col">
-            <h3 data-bs-toggle="modal" data-bs-target="#loanModal">
+            <h3 data-bs-toggle="modal" data-bs-target="#loanModal" (click)="setBtn('card')"
+                [ngClass]="{'actives': selectedBtn === 'card'}">
                 <i class="fa-solid fa-address-card"></i>
             </h3>
         </div>
@@ -245,6 +246,59 @@
                 <button type="button" class="btn btn-primary">
                     <i class="fas fa-play-circle me-1"></i>Apply Now
                 </button> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- //Qr -->
+<!-- Modal -->
+<div class="modal animate__animated animate__zoomInDown" id="exampleModal" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title fs-5" id="exampleModalLabel">Scan Here To Visit Us</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="">
+                <img src="/pic/qr.png" alt="" class="w-100 h-auto">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //mode -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h3 class="offcanvas-title p-3 pt-0 pb-0" id="offcanvasExampleLabel">Setting</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <hr class=" border-2">
+    <div class="offcanvas-body">
+        <div class="wrapper-rightt">
+            <div class="row">
+                <div class="col-12 mb-2">
+                    <h3 data-bs-toggle="modal" data-bs-target="#loanModal">
+                        <i class="fa-solid fa-address-card"></i>
+                        Deatail About Us
+                    </h3>
+                </div>
+                <div class="col-12 mb-2">
+
+                    <h3 (click)="KhmerLanguaue()">
+                        <i class="fa-solid fa-globe"></i>
+                        Language
+                    </h3>
+                </div>
+                <div class="col-12 mb-2">
+                    <h3 (click)="toggleTheme()">
+                        <i [ngClass]="iconTheme()"></i>
+                        Theme
+                    </h3>
+                </div>
             </div>
         </div>
     </div>

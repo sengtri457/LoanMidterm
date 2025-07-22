@@ -38,11 +38,11 @@ export class Loan2 implements OnInit {
       const remaining = this.principal - monthlyPrincipal * (i - 1);
       const interest = +((remaining * this.interestRate) / 100).toFixed(2);
       const total = +(monthlyPrincipal + interest).toFixed(2);
-
+      console.log(remaining);
       this.payments.push({
         no: i,
         date: paymentDate.toISOString(),
-        principal: +monthlyPrincipal.toFixed(2),
+        principal: monthlyPrincipal.toFixed(2),
         interest,
         total,
         isOddRow: i % 2 === 1,
@@ -51,11 +51,22 @@ export class Loan2 implements OnInit {
   }
 
   get totalInterest() {
-    return this.payments.reduce((sum, p) => sum + p.interest, 0);
+    // return this.payments.reduce((sum, p) => sum + p.interest, 0);
+
+    let sum = 0;
+    for (let index = 0; index < this.payments.length; index++) {
+      sum += this.payments[index].interest;
+    }
+    return sum;
   }
 
   get totalPayment() {
-    return this.payments.reduce((sum, p) => sum + p.total, 0);
+    // return this.payments.reduce((sum, p) => sum + p.total, 0);
+    let sum = 0;
+    for (let index = 0; index < this.payments.length; index++) {
+      sum += this.payments[index].total;
+    }
+    return sum;
   }
   checkSucessfull() {
     let numericValuePrice = parseFloat(this.catchValueForm) || 2000;

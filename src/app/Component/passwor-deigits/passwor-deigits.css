@@ -138,12 +138,12 @@ p {
 }
 
 .wrapper-main {
-    /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("/img/acbg.jpg");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("/pic/bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center; */
+    background-position: center;
     background-color: #091521;
-    padding: 20px;
+    padding: 36px;
 }
 
 .container::after {

@@ -16,7 +16,7 @@ interface color {
 })
 export class HideRow {
   username: string = '';
-
+  selectedBtn: string = 'home';
   constructor(private LoanService: LoanService) {}
   isActive = true;
   isdark = true;
@@ -64,12 +64,21 @@ export class HideRow {
     ];
 
     return textMap[this.currentLanguage].map((text, index) => ({
-      color: ['#34495e', '#34495e', '#34495e', '#34495e', '#34495e', '#34495e'][
-        index
-      ],
+      color: [
+        '#2f6397ff',
+        '#34495e',
+        '#2f6397ff',
+        '#34495e',
+        '#2f6397ff',
+        '#34495e',
+      ][index],
       text,
       clas: classMap[index],
     }));
+  }
+
+  setBtn(btnName: string) {
+    this.selectedBtn = btnName;
   }
   RowColor(): color[] {
     const textMap = {
@@ -80,7 +89,7 @@ export class HideRow {
     const classMap = ['fa-solid fa-people-group', 'fa-solid fa-user-tie'];
 
     return textMap[this.currentLanguage].map((text, index) => ({
-      color: ['#34495e', '#34495e'][index],
+      color: ['#2f6397ff', '#34495e'][index],
       text,
       clas: classMap[index],
     }));
@@ -120,6 +129,7 @@ export class HideRow {
     this.isActive = !this.isActive;
     this.isAc = !this.isAc;
   }
+
   // CongrateData() {
   //   return setTimeout(() => {
   //     Swal.fire({

@@ -34,8 +34,12 @@
 }
 
 h3 {
-    font-size: clamp(0.7rem, 3.5vw, 1.5rem);
+    font-size: clamp(0.7rem, 2.5vw, 1.5rem);
     font-weight: 500;
+}
+
+.menu-bar h3 {
+    font-size: clamp(0.7rem, 3.5vw, 1.5rem);
 }
 
 h1 {
@@ -362,8 +366,38 @@ p {
     margin-bottom: 0.25rem;
 }
 
+.wraper-menu-small {
+    cursor: pointer;
+}
+
+.menu-bar {
+    opacity: 0;
+
+}
+
+.menu-bar h3 {
+    padding: 0.5rem 1rem;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.menu-bar h3.actives {
+    background-color: #34495e;
+    color: white;
+}
+
+.menu-bar h3:hover {
+    background-color: #34495e;
+    color: white;
+}
+
 @media (max-width: 768px) {
     .info-grid {
         grid-template-columns: 1fr;
+    }
+
+    .menu-bar {
+        opacity: 1;
     }
 }

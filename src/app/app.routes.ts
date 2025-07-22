@@ -41,15 +41,15 @@ export const routes: Routes = [
     component: LoanThreeMonth,
   },
   {
-    path: 'DescriptionLoan',
+    path: 'DesLoan',
     component: DescriptionLoan,
   },
   {
-    path: 'DescriptionLoan2',
+    path: 'DesLoan2',
     component: DescriptionLoan2,
   },
   {
-    path: 'DescriptionLoan3',
+    path: 'DesLoan3',
     component: DescripionLoan3,
   },
   {

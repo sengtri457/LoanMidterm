@@ -1,9 +1,7 @@
 import { LoanService } from './../../Service/loan-service';
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { sign } from 'crypto';
-
 import Swal from 'sweetalert2';
 interface color {
   color: string;
@@ -16,7 +14,7 @@ interface color {
   templateUrl: './hide-row.html',
   styleUrl: './hide-row.css',
 })
-export class HideRow implements OnInit {
+export class HideRow {
   username: string = '';
 
   constructor(private LoanService: LoanService) {}
@@ -45,21 +43,14 @@ export class HideRow implements OnInit {
   currentLanguage: 'en' | 'km' = 'en';
   getcolor(): color[] {
     const textMap = {
-      en: [
-        'Loan',
-        'Loan2',
-        'Loan3',
-        'DescriptionLoan',
-        'DescriptionLoan2',
-        'DescriptionLoan3',
-      ],
+      en: ['Loan', 'Loan2', 'Loan3', 'DesLoan', 'DesLoan2', 'DesLoan3'],
       km: [
         'ប្រាក់កម្ចី',
         'ប្រាក់កម្ចីថយការប្រាក់',
         'ប្រាក់កម្ចីថយការប្រាក់បីខែ',
         'ការពិពណ៌នាប្រាក់កម្ចី',
-        'ការពិពណ៌នាប្រាក់កម្ចីថយការប្រាក់',
-        'ការពិពណ៌នាប្រាក់កម្ចីថយការប្រាក់បីខែ',
+        'ការពិពណ៌នាប្រាក់កម្ចី1',
+        'ការពិពណ៌នាប្រាក់កម្ចី2',
       ],
     };
 
@@ -73,7 +64,7 @@ export class HideRow implements OnInit {
     ];
 
     return textMap[this.currentLanguage].map((text, index) => ({
-      color: ['#FF5733', '#33FF57', '#3357FF', '#F1C40F', '#9B59B6', '#E67E22'][
+      color: ['#34495e', '#34495e', '#34495e', '#34495e', '#34495e', '#34495e'][
         index
       ],
       text,
@@ -82,14 +73,14 @@ export class HideRow implements OnInit {
   }
   RowColor(): color[] {
     const textMap = {
-      en: ['Members', 'Login'],
-      km: ['គណនី', 'ចូលប្រើប្រាស់'],
+      en: ['Members', 'LogOut'],
+      km: ['គណនី', 'ចាកចេញ'],
     };
 
     const classMap = ['fa-solid fa-people-group', 'fa-solid fa-user-tie'];
 
     return textMap[this.currentLanguage].map((text, index) => ({
-      color: ['#1ABC9C', '#2ECC71'][index],
+      color: ['#34495e', '#34495e'][index],
       text,
       clas: classMap[index],
     }));
@@ -129,15 +120,15 @@ export class HideRow implements OnInit {
     this.isActive = !this.isActive;
     this.isAc = !this.isAc;
   }
-  CongrateData() {
-    return setTimeout(() => {
-      Swal.fire({
-        title: 'welcome: ' + (this.AdminCatch = this.LoanService.getUserName()),
-        icon: 'success',
-        draggable: true,
-      });
-    }, 1000);
-  }
+  // CongrateData() {
+  //   return setTimeout(() => {
+  //     Swal.fire({
+  //       title: 'welcome: ' + (this.AdminCatch = this.LoanService.getUserName()),
+  //       icon: 'success',
+  //       draggable: true,
+  //     });
+  //   }, 1000);
+  // }
   Loout() {
     this.navigatepage.navigate(['/aba']);
   }
@@ -146,17 +137,17 @@ export class HideRow implements OnInit {
       Loan: '/Loan',
       Loan2: '/Loan2',
       Loan3: '/Loan3',
-      DescriptionLoan: '/DescriptionLoan',
-      DescriptionLoan2: '/DescriptionLoan2',
-      DescriptionLoan3: '/DescriptionLoan3',
+      DesLoan: '/DesLoan',
+      DesLoan2: '/DesLoan2',
+      DesLoan3: '/DesLoan3',
       Members: '/Members',
-      Login: '/aba',
+      LogOut: '/aba',
       ប្រាក់កម្ចី: '/Loan',
       ប្រាក់កម្ចីថយការប្រាក់: '/Loan2',
       ប្រាក់កម្ចីថយការប្រាក់បីខែ: '/Loan3',
-      ការពិពណ៌នាប្រាក់កម្ចី: '/DescriptionLoan',
-      ការពិពណ៌នាប្រាក់កម្ចីថយការប្រាក់: '/DescriptionLoan2',
-      ការពិពណ៌នាប្រាក់កម្ចីថយការប្រាក់បីខែ: '/DescriptionLoan3',
+      ការពិពណ៌នាប្រាក់កម្ចី: '/DesLoan',
+      ការពិពណ៌នាប្រាក់កម្ចី1: '/DesLoan2',
+      ការពិពណ៌នាប្រាក់កម្ចី2: '/DesLoan3',
     };
 
     const route = routeMap[text];
@@ -187,7 +178,7 @@ export class HideRow implements OnInit {
       });
     }
   }
-  ngOnInit(): void {
-    this.CongrateData();
-  }
+  // ngOnInit(): void {
+  //   this.CongrateData();
+  // }
 }

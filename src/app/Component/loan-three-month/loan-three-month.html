@@ -130,7 +130,7 @@
                     <tr [class.bgsky]="p.isOddRow" [class.text-green]="!p.isOddRow">
                         <td>{{ p.no }}</td>
                         <td>{{ p.principal | currency:"USD"}}</td>
-                        <td>{{ p.interest }}</td>
+                        <td>{{ p.interest| currency:"USD" }}</td>
                         <td>{{ p.total | currency:"USD"}}</td>
                         <td>{{p.payDate | date:'yyyy-MM-dd'}}</td>
                     </tr>

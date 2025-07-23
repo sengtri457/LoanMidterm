@@ -77,7 +77,7 @@ export class LoanThreeMonth implements OnInit {
       let principalPaid = 0;
 
       // Pay principal dynamically every 3rd payment or the last payment
-      if (i % 3 === 0 || i === duration) {
+      if (i % 3 === 0 || i == duration) {
         if (pricePaid + principalPayment <= priceCal) {
           principalPaid = principalPayment; // Pay the calculated principal
         } else {
